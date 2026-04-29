@@ -1,0 +1,24 @@
+baseURL = 'https://labufa25.netlify.app/'
+title = 'Entre Dos Tierras'
+theme = 'paper'
+
+[params]
+  color = 'linen'
+  description = 'Food, culture & stories between Zacatecas and Colorado — La Bufa Mexican Restaurant'
+
+[languages]
+  [languages.en]
+    languageName = 'English'
+    contentDir = 'content/en'
+    weight = 1
+    title = 'Entre Dos Tierras'
+    [languages.en.params]
+      description = 'Food, culture & stories between Zacatecas and Colorado'
+
+  [languages.es]
+    languageName = 'Español'
+    contentDir = 'content/es'
+    weight = 2
+    title = 'Entre Dos Tierras'
+    [languages.es.params]
+      description = 'Comida, cultura e historias entre Zacatecas y Colorado'
