@@ -85,17 +85,18 @@
 
 <div class="lang-switcher flex items-center ltr:lg:ml-6 rtl:lg:mr-6 space-x-2">
   🌍
-  {{ range .Site.Languages }}
-    {{ if eq .Lang $.Site.Language.Lang }}
+  {{ $langs := .Site.Languages }}
+  {{ range $i, $lang := $langs }}
+    {{ if eq $lang.Lang $.Site.Language.Lang }}
       <span style="color: #1B8FA8; font-weight: bold; font-size: 0.85rem;">
-        {{ .LanguageName }}
+        {{ $lang.LanguageName }}
       </span>
     {{ else }}
-      <a href="/{{ .Lang }}/" style="font-size: 0.85rem; opacity: 0.6;">
-        {{ .LanguageName }}
+      <a href="/{{ $lang.Lang }}/" style="font-size: 0.85rem; opacity: 0.6;">
+        {{ $lang.LanguageName }}
       </a>
     {{ end }}
-    {{ if eq .Lang "en" }}
+    {{ if lt $i (sub (len $langs) 1) }}
       <span style="opacity: 0.3; font-size: 0.85rem;">·</span>
     {{ end }}
   {{ end }}
